@@ -8,9 +8,15 @@ import {JsonService} from "../../services/json.service";
   providers:[JsonService]
 })
 export class HomeComponent implements OnInit {
+  importantArticle:any;
+  sideArticle1:any;
+  sideArticle2:any;
   articles:any[];
   constructor(private _jsonService: JsonService) {
-    this.articles=this._jsonService.getArticles();
+    this.importantArticle=this._jsonService.getMainArticle();
+    this.sideArticle1=this._jsonService.getSideArticle1();
+    this.sideArticle2=this._jsonService.getSideArticle2();
+    this.articles=this._jsonService.getAdditionalArticles();
   }
 
   ngOnInit(): void {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {JsonService} from "../../services/json.service";
 
 @Component({
   selector: 'app-carousel',
@@ -6,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carousel.component.css']
 })
 export class CarouselComponent implements OnInit {
-
-  constructor() {
-
+  articles:any[];
+  constructor(private _jsonService: JsonService) {
+    this.articles=this._jsonService.getCarouselArticles();
   }
 
   ngOnInit(): void {

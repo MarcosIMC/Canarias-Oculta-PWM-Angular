@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Permanent Marker";
+  src: local("Permanent Marker"), url("./app/fonts/Permanent_Marker/PermanentMarker-Regular.ttf");
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url('./app/fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+}

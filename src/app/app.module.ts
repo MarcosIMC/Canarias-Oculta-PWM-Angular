@@ -9,7 +9,8 @@ import { ArticleComponent } from './components/article/article.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { HomeComponent } from './pages/home/home.component';
-import {RouterModule} from "@angular/router";
+import { RouterModule } from "@angular/router";
+import { CarouselArticleComponent } from './components/carousel/carousel-article/carousel-article.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +21,13 @@ import {RouterModule} from "@angular/router";
     ArticleComponent,
     UserProfileComponent,
     CarouselComponent,
-    HomeComponent
+    HomeComponent,
+    CarouselArticleComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      {path:'home', component:HomeComponent},
+      {path:'home',component:HomeComponent},
     ])
   ],
   providers: [],
