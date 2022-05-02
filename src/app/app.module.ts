@@ -9,6 +9,7 @@ import { ArticleComponent } from './components/article/article.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { ShortArticleComponent } from './components/short-article/short-article.component';
+import { ImgSectionComponentComponent } from './components/img-section-component/img-section-component.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ShortArticleComponent } from './components/short-article/short-article.
     ArticleComponent,
     UserProfileComponent,
     CarouselComponent,
-    ShortArticleComponent
+    ShortArticleComponent,
+    ImgSectionComponentComponent
   ],
   imports: [
     BrowserModule

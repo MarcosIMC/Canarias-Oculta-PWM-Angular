@@ -1,0 +1,18 @@
+.card:hover {
+  background-color: #FFD511;
+}
+
+. section {
+  text-align: center;
+  display: inline;
+  float: right;
+  width: 19%;
+  margin-right: 5em;
+  padding: 5em;
+  position: center;
+  border: 5px solid blue;
+}
+
+.section > h3 {
+  font-size: 0.1em;
+}
