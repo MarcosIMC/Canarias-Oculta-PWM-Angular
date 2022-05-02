@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-short-article',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./short-article.component.css']
 })
 export class ShortArticleComponent implements OnInit {
-
+  @Input() article:any;
   constructor() { }
 
   ngOnInit(): void {
