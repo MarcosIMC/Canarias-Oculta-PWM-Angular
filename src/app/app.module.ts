@@ -10,6 +10,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { ShortArticleComponent } from './components/short-article/short-article.component';
 import { ImgSectionComponentComponent } from './components/img-section-component/img-section-component.component';
+import { VerticalNavbarComponentComponent } from './components/vertical-navbar-component/vertical-navbar-component.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ImgSectionComponentComponent } from './components/img-section-component
     UserProfileComponent,
     CarouselComponent,
     ShortArticleComponent,
-    ImgSectionComponentComponent
+    ImgSectionComponentComponent,
+    VerticalNavbarComponentComponent
   ],
   imports: [
     BrowserModule
