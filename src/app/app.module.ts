@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ArticleComponent } from './components/article/article.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { ShortArticleComponent } from './components/short-article/short-article.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     HeaderComponent,
     ArticleComponent,
     UserProfileComponent,
-    CarouselComponent
+    CarouselComponent,
+    ShortArticleComponent
   ],
   imports: [
     BrowserModule
