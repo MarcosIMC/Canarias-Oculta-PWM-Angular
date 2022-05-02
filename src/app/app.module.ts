@@ -8,9 +8,13 @@ import { HeaderComponent } from './components/header/header.component';
 import { ArticleComponent } from './components/article/article.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
-import { ShortArticleComponent } from './components/short-article/short-article.component';
-import { ImgSectionComponentComponent } from './components/img-section-component/img-section-component.component';
-import { VerticalNavbarComponentComponent } from './components/vertical-navbar-component/vertical-navbar-component.component';
+import { HomeComponent } from './pages/home/home.component';
+import { RouterModule } from "@angular/router";
+import { CarouselArticleComponent } from './components/carousel/carousel-article/carousel-article.component';
+import { IslandComponent } from './pages/island/island.component';
+import { ImgSectionComponent } from './pages/island/img-section/img-section.component';
+import { ShortArticleComponent } from './pages/island/short-article/short-article.component';
+import { VerticalNavBarComponent } from './components/vertical-nav-bar/vertical-nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +25,19 @@ import { VerticalNavbarComponentComponent } from './components/vertical-navbar-c
     ArticleComponent,
     UserProfileComponent,
     CarouselComponent,
+    HomeComponent,
+    CarouselArticleComponent,
+    IslandComponent,
+    ImgSectionComponent,
     ShortArticleComponent,
-    ImgSectionComponentComponent,
-    VerticalNavbarComponentComponent
+    VerticalNavBarComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      {path:'home',component:HomeComponent},
+      {path:'island',component:IslandComponent},
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
