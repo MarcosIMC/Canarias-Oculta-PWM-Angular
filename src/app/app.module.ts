@@ -11,6 +11,10 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RouterModule } from "@angular/router";
 import { CarouselArticleComponent } from './components/carousel/carousel-article/carousel-article.component';
+import { IslandComponent } from './pages/island/island.component';
+import { ImgSectionComponent } from './pages/island/img-section/img-section.component';
+import { ShortArticleComponent } from './pages/island/short-article/short-article.component';
+import { VerticalNavBarComponent } from './components/vertical-nav-bar/vertical-nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +26,17 @@ import { CarouselArticleComponent } from './components/carousel/carousel-article
     UserProfileComponent,
     CarouselComponent,
     HomeComponent,
-    CarouselArticleComponent
+    CarouselArticleComponent,
+    IslandComponent,
+    ImgSectionComponent,
+    ShortArticleComponent,
+    VerticalNavBarComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       {path:'home',component:HomeComponent},
+      {path:'island',component:IslandComponent},
     ])
   ],
   providers: [],

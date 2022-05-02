@@ -1,0 +1,23 @@
+<header>
+  <img id="imgHeader" src="assets/images/headerImage.jpg" alt="Header img">
+</header>
+<app-navbar></app-navbar>
+<main class="mainIslandPage">
+  <div class="container">
+    <div class="row">
+      <div  id="verticalNavBar" class="col-md-3">
+        <app-vertical-nav-bar></app-vertical-nav-bar>
+      </div>
+      <div id="shortArticle" class="col-md-9">
+        <app-short-article [article]="importantArticle"></app-short-article>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="sections" class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3">
+      <app-img-section [article]="article" *ngFor="let article of articles"></app-img-section>
+    </div>
+  </div>
+</main>
+<app-footer></app-footer>
