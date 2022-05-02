@@ -1,0 +1,22 @@
+@media screen and (min-width: 768px) and (max-width: 992px){
+  .imgLongArticle {
+    width: 50% !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .img-fluid {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+
+.articleResume:hover,
+.shortArticle:hover,
+.sectionIslandPage:hover,
+.card:hover {
+  background-color: #FFD511;
+}
+
