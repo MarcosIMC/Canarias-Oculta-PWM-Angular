@@ -1,9 +1,9 @@
 <div class="navbar-p">
   <a routerLink="/home">Logo</a>
   <div class="btn-search">
-    <a style="float:right" routerLink="/searchPage">Buscar</a>
+    <a style="float:right" [routerLink]="['/searchPage']">Buscar</a>
   </div>
-  <a style="float:right" [routerLink]="['dynamicUser.html']">Usuario</a>
+  <a style="float:right" [routerLink]="['/user']">Usuario</a>
   <div style="float:right" class="dropdown-p">
     <button class="dropbtn">Islas
       <i class="fa fa-caret-down"></i>
