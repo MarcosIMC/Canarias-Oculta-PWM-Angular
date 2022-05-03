@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 import {JsonService} from "../../services/json.service";
 
 @Component({
@@ -8,15 +9,20 @@ import {JsonService} from "../../services/json.service";
   providers:[JsonService]
 })
 export class IslandComponent implements OnInit {
+  island: String | undefined;
   importantArticle:any;
   articles:any[];
-  constructor(private _jsonService: JsonService) {
+  constructor(private route:ActivatedRoute, private _jsonService: JsonService) {
     this.importantArticle=this._jsonService.getMainArticle();
     this.articles=this._jsonService.getArticles();
   }
 
 
   ngOnInit(): void {
+    const routeParams= this.route.snapshot.paramMap;
+    this.island = String(
+      routeParams.get('islandName')
+    );
   }
 
 }

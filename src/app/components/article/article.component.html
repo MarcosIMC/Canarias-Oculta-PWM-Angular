@@ -1,4 +1,4 @@
-<article class="card">
+<article class="card" [routerLink]="['/articles',article.title]">
   <img [src]="article.imageURL" [alt]="article.altText" class="card-img-top">
   <div class="card-body">
     <h2 class="card-title">{{article.title}}</h2>

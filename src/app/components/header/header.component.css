@@ -1,3 +1,5 @@
 #imgHeader {
   width: 100vw;
+  height: 10vh;
+  object-fit: cover;
 }

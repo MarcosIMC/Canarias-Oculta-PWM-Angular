@@ -2,6 +2,15 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class JsonService {
+
+  public getIslandMainArticle(island:String) {
+    return this.getMainArticle();
+  }
+
+  public getIslandArticles(island:String) {
+    return this.getArticles();
+  }
+
   public getCarouselArticles():any[] {
     return [
       {

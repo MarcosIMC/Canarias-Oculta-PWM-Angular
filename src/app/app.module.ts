@@ -15,9 +15,9 @@ import { IslandComponent } from './pages/island/island.component';
 import { ImgSectionComponent } from './pages/island/img-section/img-section.component';
 import { ShortArticleComponent } from './pages/island/short-article/short-article.component';
 import { VerticalNavBarComponent } from './components/vertical-nav-bar/vertical-nav-bar.component';
-import { SearchPageComponentComponent } from './pages/search-page-component/search-page-component.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { SearchMobileComponent } from './components/search-mobile/search-mobile.component';
+import { ArticlePageComponent } from './pages/article-page/article-page.component';
 
 @NgModule({
   declarations: [
@@ -34,16 +34,20 @@ import { SearchMobileComponent } from './components/search-mobile/search-mobile.
     ImgSectionComponent,
     ShortArticleComponent,
     VerticalNavBarComponent,
-    SearchPageComponentComponent,
     SearchPageComponent,
-    SearchMobileComponent
+    SearchMobileComponent,
+    ArticlePageComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
+      {path:'',component:HomeComponent},
       {path:'home',component:HomeComponent},
       {path:'island',component:IslandComponent},
-      {path:'searchPage', component: SearchPageComponent}
+      {path:'searchPage',component:SearchPageComponent},
+      {path:'articles/:articleName',component:ArticlePageComponent},
+      {path:'island/:islandName',component:IslandComponent},
+      {path:'**', pathMatch: 'full',component:HomeComponent}
     ])
   ],
   providers: [],

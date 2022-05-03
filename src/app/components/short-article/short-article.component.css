@@ -1,22 +1,27 @@
 @media screen and (min-width: 768px) and (max-width: 992px){
   .imgLongArticle {
-    width: 50% !important;
-    display: block !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .img-fluid {
-    max-width: 100% !important;
-    height: auto !important;
+    max-width: 100%;
+    height: auto;
   }
 }
 
+article {
+  text-align: center;
+  width: 75vw;
+  padding: 2em;
+  margin: 1em;
+  display: block;
+  float: right;
+}
 
-.articleResume:hover,
-.shortArticle:hover,
-.sectionIslandPage:hover,
-.card:hover {
+.shortArticle:hover {
   background-color: #FFD511;
 }
 
