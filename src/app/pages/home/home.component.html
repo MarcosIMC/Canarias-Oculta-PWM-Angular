@@ -21,8 +21,10 @@
         </div>
       </div>
     </div>
-    <div *ngFor="let article of articles" class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g3">
-      <app-article [article]="article"></app-article>
+    <div class="container">
+      <div *ngFor="let article of articles" class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g3">
+        <app-article [article]="article"></app-article>
+      </div>
     </div>
   </div>
 </main>
