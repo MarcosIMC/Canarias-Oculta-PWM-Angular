@@ -1,0 +1,23 @@
+<app-header></app-header>
+<app-navbar></app-navbar>
+<main>
+  <app-vertical-nav-bar></app-vertical-nav-bar>
+
+  <section class="mainSection">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <app-search-mobile></app-search-mobile>
+        </div>
+        <div class="col-md-9 col-lg-12">
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5">
+            <div class="col" *ngFor="let article of articles">
+              <app-article [article]="article"></app-article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<app-footer></app-footer>
