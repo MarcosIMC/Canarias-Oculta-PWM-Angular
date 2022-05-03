@@ -8,5 +8,6 @@ article > h1,h2 {
 
 .card:hover {
   background-color: #FFD511;
+  cursor: pointer;
 }
 

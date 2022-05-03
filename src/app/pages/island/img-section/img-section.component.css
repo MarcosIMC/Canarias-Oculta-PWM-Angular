@@ -1,5 +1,6 @@
 .card:hover {
   background-color: #FFD511;
+  cursor: pointer;
 }
 
 .section {
@@ -13,13 +14,8 @@
   border: 5px solid blue;
 }
 
-.section > h3 {
+h3 {
   font-family: "Permanent Marker", cursive;
-  font-size: 0.1em;
-}
-
-.sectionIslandPage:hover {
-  background-color: #FFD511;
 }
 
 .imgSection {
