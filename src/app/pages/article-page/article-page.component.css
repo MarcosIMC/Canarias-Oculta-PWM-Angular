@@ -14,9 +14,19 @@
   text-align: justify;
 }
 
-.longArticle > img {
+#imgLongArticle {
   margin: 0.5em;
   border-radius: 1em;
   float: right;
   width: 30%;
+}
+
+#favouriteStar {
+  float: left;
+  width: 5em;
+  margin: 0.5em;
+}
+
+#favouriteStar:hover {
+  cursor: pointer;
 }

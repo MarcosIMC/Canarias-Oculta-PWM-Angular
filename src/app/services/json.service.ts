@@ -3,11 +3,21 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class JsonService {
 
-  public getIslandMainArticle(island:String) {
+  articleFavouriteState:boolean=false;
+
+  public setArticleFavourite(user:any, article:any):void {
+    this.articleFavouriteState=!this.articleFavouriteState;
+  }
+
+  public isArticleFavourite(article:any):boolean {
+    return this.articleFavouriteState;
+}
+
+  public getIslandMainArticle(island:String):any {
     return this.getMainArticle();
   }
 
-  public getIslandArticles(island:String) {
+  public getIslandArticles(island:String):any[] {
     return this.getArticles();
   }
 
@@ -35,6 +45,7 @@ export class JsonService {
   public getMainArticle():any {
     return {
       "title": "Jameos del Agua",
+      "favouriteCount": 1398,
       "link": "",
       "rating": 5,
       "imageURL": "https://imgcact.b-cdn.net/spai/w_1425+q_lossy+ret_img+to_webp/https://cactlanzarote.b-cdn.net/wp-content/uploads/2016/02/noches-de-jameos-1972-1920.jpg",

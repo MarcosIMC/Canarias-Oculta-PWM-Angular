@@ -10,7 +10,7 @@ import {JsonService} from "../../services/json.service";
 })
 export class ArticlePageComponent implements OnInit {
   article: any;
-  constructor(private route:ActivatedRoute, private _jsonService: JsonService) { }
+  constructor(private route:ActivatedRoute, private _jsonService: JsonService) {  }
 
   ngOnInit(): void {
     const routeParams= this.route.snapshot.paramMap;
@@ -20,6 +20,14 @@ export class ArticlePageComponent implements OnInit {
     this.article = this._jsonService.getArticles().find(
       article => article.title === articleTitleFromRoute
     );
+  }
+
+  getFavouriteState():boolean {
+    return this._jsonService.isArticleFavourite(this);
+  }
+
+  changeFavouriteState() {
+    this._jsonService.setArticleFavourite(null, this);
   }
 
 }
