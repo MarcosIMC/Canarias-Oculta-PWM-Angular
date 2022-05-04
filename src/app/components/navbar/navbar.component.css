@@ -4,7 +4,7 @@
 
 img {
   height: 1.5em;
-  filter: drop-shadow(0.1em 0.2em 0.05em #000000);
+  filter: drop-shadow(0 0 0.05em #000000);
 }
 
 .btn-search {

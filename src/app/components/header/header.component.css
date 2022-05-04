@@ -1,5 +1,5 @@
 #imgHeader {
-  width: 100vw;
+  width: -moz-available;
   height: 10vh;
   object-fit: cover;
 }

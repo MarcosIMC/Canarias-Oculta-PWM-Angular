@@ -1,3 +1,7 @@
+.carousel-card:hover {
+  cursor: pointer;
+}
+
 .textOverlay {
   position: absolute;
   color: white;

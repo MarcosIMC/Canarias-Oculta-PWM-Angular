@@ -48,7 +48,7 @@ import { ArticlePageComponent } from './pages/article-page/article-page.componen
       {path:'articles/:articleName',component:ArticlePageComponent},
       {path:'island/:islandName',component:IslandComponent},
       {path:'**', pathMatch: 'full',component:HomeComponent}
-    ])
+    ],{ onSameUrlNavigation: 'reload' })
   ],
   providers: [],
   bootstrap: [AppComponent]

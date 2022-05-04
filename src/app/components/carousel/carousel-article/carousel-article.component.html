@@ -1,4 +1,4 @@
-<div onclick="openArticle(this)">
+<div class="carousel-card" [routerLink]="['/articles',article.title]">
   <img [src]="article.imageURL" [alt]="article.altText" class="d-block w-100">
   <div class="textOverlay">
     <h2>{{article.title}}</h2>

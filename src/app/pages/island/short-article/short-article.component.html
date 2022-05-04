@@ -1,4 +1,4 @@
-<article class="shortArticle" onclick="openArticle(this);">
+<article [routerLink]="['/articles',article.title]" class="shortArticle" onclick="openArticle(this);">
   <div class="imgLongArticle">
     <img class=" img-fluid " [alt]="article.altText"
          [src]="article.imageURL">
