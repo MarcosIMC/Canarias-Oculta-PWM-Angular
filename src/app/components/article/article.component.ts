@@ -1,5 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {JsonService} from "../../services/json.service";
+import {Article} from "../../class/article";
+import {ArticleService} from "../../services/article.service";
+import {map} from "rxjs";
+//import {JsonService} from "../../services/json.service";
 
 @Component({
   selector: 'app-article',
@@ -7,10 +10,15 @@ import {JsonService} from "../../services/json.service";
   styleUrls: ['./article.component.css']
 })
 export class ArticleComponent implements OnInit {
-  @Input() article:any;
-  constructor() {}
+
+  @Input() island:any;
+  @Input() article!:Article;
+
+  constructor(private  articleService : ArticleService) { }
 
   ngOnInit(): void {
   }
+
+
 
 }

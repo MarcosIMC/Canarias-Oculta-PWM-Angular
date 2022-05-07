@@ -17,10 +17,15 @@ import { VerticalNavBarComponent } from './components/vertical-nav-bar/vertical-
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { SearchMobileComponent } from './components/search-mobile/search-mobile.component';
 import { ArticlePageComponent } from './pages/article-page/article-page.component';
+import {environment} from "../environments/environment";
+import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
+import {AngularFireModule} from "@angular/fire/compat";
+import { ArticleListComponent } from './components/article-list/article-list.component';
 import { UserComponent } from './pages/user/user.component';
 import { UserCardComponent } from './pages/user/user-card/user-card.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -40,12 +45,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SearchPageComponent,
     SearchMobileComponent,
     ArticlePageComponent,
+    ArticleListComponent
     UserComponent,
     UserCardComponent,
     EditProfileComponent
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
       {path: 'home', component: HomeComponent},
