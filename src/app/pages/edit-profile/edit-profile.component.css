@@ -1,0 +1,33 @@
+form {
+  padding-bottom: 2px;
+}
+
+app-footer {
+  position: absolute;
+  bottom: 0;
+  width: -moz-available;
+}
+
+button {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: x-large;
+}
+
+.profilePicture {
+  display: block;
+  width: 15vw;
+  height: 15vw;
+  line-height: 25vw;
+  text-align: center;
+  font-size: 0.8em;
+  background-color: grey;
+  border-radius: 25vw;
+  margin: 4em 8vw 0;
+}
+
+.submitBtn {
+  grid-column: 3 / span 2;
+  grid-row: 2;
+  margin: 1em 8vw 4em;
+}

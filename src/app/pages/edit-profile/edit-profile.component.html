@@ -1,0 +1,69 @@
+<app-navbar></app-navbar>
+
+<div class="container container-edit-profile">
+  <div class="row">
+    <div class="col col-md-4 col-lg-6">
+      <img src="" class="profilePicture" alt="">
+      <button class="submitBtn">Upload Image</button>
+    </div>
+    <div class="col-md-8 col-lg-6">
+      <h3>Datos de usuario</h3>
+      <form [formGroup]="form" *ngIf="form" (ngSubmit)="submit()">
+        <div class="form-group">
+          <label for="username">Nombre de usuario</label>
+          <input
+            formControlName="username"
+            id="username"
+            type="username"
+            class="form-control"
+            placeholder="Usuario">
+          <div *ngIf="usernameControl.touched && usernameControl.invalid" class="alert alert-danger">
+            <div *ngIf="usernameControl.errors!['required']">Escriba un nombre de usuario</div>
+            <div *ngIf="usernameControl.errors!['minlength']">El nombre de usuario debe contener al menos 3 caracteres</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input
+            formControlName="password"
+            id="password"
+            type="password"
+            class="form-control"
+            placeholder="Contraseña">
+          <div *ngIf="passwordControl.touched && passwordControl.invalid" class="alert alert-danger">
+            <div *ngIf="passwordControl.errors!['required']">Escriba una contraseña</div>
+            <div *ngIf="passwordControl.errors!['minlength']">La contraseña debe contener al menos 8 caracteres</div>
+            <div *ngIf="passwordControl.errors!['number']">La contraseña debe contener al menos un número</div>
+            <div *ngIf="passwordControl.errors!['pattern']">La contraseña debe contener al menos una minúscula, una mayúscula y un número</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="passwordConfirm">Confirma la contraseña</label>
+          <input
+            formControlName="passwordConfirm"
+            id="passwordConfirm"
+            type="password"
+            class="form-control"
+            placeholder="Vuelva a escribir la contraseña">
+          <div *ngIf="passwordConfirmControl.touched && passwordConfirmControl.invalid" class="alert alert-danger">
+            <div *ngIf="passwordConfirmControl.errors!['required']">Vuelva a escribir la contraseña</div>
+            <div *ngIf="passwordConfirmControl.errors!['confirmedValidator']">Las contraseñas deben coincidir</div>
+            <div *ngIf="passwordConfirmControl.errors!['minlength']">La contraseña debe contener al menos 8 caracteres</div>
+            <div *ngIf="passwordConfirmControl.errors!['pattern']">La contraseña debe contener al menos una minúscula, una mayúscula y un número</div>
+          </div>
+        </div>
+        <button type="submit">Confirmar</button>
+      </form>
+      <div id="message">
+        <h3>Su contraseña debería contener lo siguiente: </h3>
+        <p id="letter" class="invalid">Una letra <b>en minúscula</b> </p>
+        <p id="capital" class="invalid">Una letra <b>en MAYÚSCULAS</b> </p>
+        <p id="number" class="invalid">Un <b>número</b></p>
+        <p id="length" class="invalid">Un mínimo de <b>8 caracteres</b></p>
+      </div>
+      <button id="btn-cancel-profile">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

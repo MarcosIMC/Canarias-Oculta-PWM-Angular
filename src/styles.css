@@ -12,3 +12,13 @@
 body {
   font-family: Montserrat, sans-serif;
 }
+
+button {
+  border:0;
+  background-color:#FFD511;
+  border-radius:0.2em;
+}
+
+button:hover {
+  cursor:pointer;
+}
