@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Article} from "../../../class/article";
 
 @Component({
   selector: 'app-short-article',
@@ -7,6 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ShortArticleComponent implements OnInit {
   @Input() article:any;
+  articles?:Article[];
   constructor() { }
 
   ngOnInit(): void {

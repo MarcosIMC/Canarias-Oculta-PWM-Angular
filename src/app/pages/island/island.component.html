@@ -8,7 +8,7 @@
         <app-vertical-nav-bar></app-vertical-nav-bar>
       </div>
       <div id="shortArticle" class="col-md-9">
-        <app-short-article [article]="importantArticle"></app-short-article>
+        <app-short-article [article]="main" *ngFor="let main of importantArticle"></app-short-article>
       </div>
     </div>
   </div>
