@@ -36,11 +36,11 @@ export class ArticlePageComponent implements OnInit {
 }
 
   getFavouriteState():boolean {
-    return this._jsonService.isArticleFavourite(this);
+    return this._jsonService.isArticleFavourite(this.article);
   }
 
   changeFavouriteState() {
-    this._jsonService.setArticleFavourite(null, this);
+    this._jsonService.setArticleFavourite(null, this.article);
   }
 
 }

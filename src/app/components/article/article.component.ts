@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Article} from "../../class/article";
 import {ArticleService} from "../../services/article.service";
 import {map} from "rxjs";
+//import {JsonService} from "../../services/json.service";
 
 @Component({
   selector: 'app-article',
