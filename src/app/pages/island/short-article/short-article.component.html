@@ -1,9 +1,9 @@
-<article [routerLink]="['/articles',article.title]" class="shortArticle" onclick="openArticle(this);">
+<article  [routerLink]="['/articles',article.title]" class="shortArticle" onclick="openArticle(this);">
   <div class="imgLongArticle">
     <img class=" img-fluid " [alt]="article.altText"
          [src]="article.imageURL">
   </div>
 
-  <p>{{article.content.slice(0,300)+"..."}}</p>
+  <p>{{article.content | slice:0: 300}}</p>
 
 </article>

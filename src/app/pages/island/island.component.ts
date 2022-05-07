@@ -14,8 +14,12 @@ export class IslandComponent implements OnInit {
   importantArticle:any;
   articles?:any[];
   constructor(private route:ActivatedRoute, private _jsonService: JsonService, private articleService: ArticleService) {
-    this.importantArticle=this._jsonService.getMainArticle();
+    //this.importantArticle=this._jsonService.getMainArticle();
     //this.articles=this._jsonService.getArticles();
+  }
+
+  async getMainByIsland(island: String){
+    this.importantArticle = await this.articleService.getArticleMainByRating(island);
   }
 
   async getAllByIsland(island: String) {
@@ -28,6 +32,7 @@ export class IslandComponent implements OnInit {
       routeParams.get('islandName')
     );
     this.getAllByIsland(this.island);
+    this.getMainByIsland(this.island);
   }
 
 }
