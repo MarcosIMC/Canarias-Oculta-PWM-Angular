@@ -2,6 +2,18 @@ form {
   padding-bottom: 2px;
 }
 
+app-footer {
+  position: absolute;
+  bottom: 0;
+  width: -moz-available;
+}
+
+button {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: x-large;
+}
+
 .profilePicture {
   display: block;
   width: 15vw;

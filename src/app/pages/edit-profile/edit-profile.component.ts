@@ -31,11 +31,13 @@ export class EditProfileComponent implements OnInit {
   }
 
   generateForm() {
-    const pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}";
+    const hasDigit=new RegExp(".*\\d.*");
+    const hasLower=new RegExp(".*[a-z].*");
+    const hasUpper=new RegExp(".*[A-Z].*");
     this.form = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(3)]],
-      password: ['', [Validators.required, Validators.minLength(8), Validators.pattern(pattern)]],
-      passwordConfirm: ['', [Validators.required, Validators.minLength(8), Validators.pattern(pattern)]],
+      password: ['', [Validators.required, Validators.minLength(8), Validators.pattern(hasDigit), Validators.pattern(hasLower), Validators.pattern(hasUpper)]],
+      passwordConfirm: ['', [Validators.required, Validators.minLength(8), Validators.pattern(hasDigit), Validators.pattern(hasLower), Validators.pattern(hasUpper)]],
     }, {
       validator: this.ConfirmedValidator('password', 'passwordConfirm')
     });
