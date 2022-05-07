@@ -45,7 +45,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SearchPageComponent,
     SearchMobileComponent,
     ArticlePageComponent,
-    ArticleListComponent
+    ArticleListComponent,
     UserComponent,
     UserCardComponent,
     EditProfileComponent
