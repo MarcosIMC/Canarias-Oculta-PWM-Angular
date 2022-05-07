@@ -17,8 +17,10 @@
             type="password"
             class="form-control"
             placeholder="contraseña">
-          <div *ngIf="f['password']?.touched && f['password']['invalid']" class="alert alert-danger">
-            <div *ngIf="f['password'].errors['required']">Password is required.</div>
+          <div *ngIf="passwordControl.touched && passwordControl.invalid" class="alert alert-danger">
+            <div *ngIf="passwordControl.errors!['required']">Password is required.</div>
+            <div *ngIf="passwordControl.errors!['minLength']">La tienes muy corta</div>
+            <div *ngIf="passwordControl.errors!['pattern']">Blablabla</div>
           </div>
         </div>
         <div class="form-group">
@@ -28,9 +30,11 @@
             id="passwordConfirm"
             type="password"
             class="form-control">
-          <div *ngIf="f['passwordConfirm'].touched && f['passwordConfirm']['invalid']" class="alert alert-danger">
-            <div *ngIf="f['passwordConfirm'].errors['required']">Password is required.</div>
-            <div *ngIf="f['passwordConfirm'].errors['confirmedValidator']">Password and Confirm Password must be match.</div>
+          <div *ngIf="passwordConfirmControl.touched && passwordConfirmControl.invalid" class="alert alert-danger">
+            <div *ngIf="passwordConfirmControl.errors!['required']">Password is required.</div>
+            <div *ngIf="passwordConfirmControl.errors!['confirmedValidator']">Password and Confirm Password must be match.</div>
+            <div *ngIf="passwordConfirmControl.errors!['minLength']">La tienes muy corta</div>
+            <div *ngIf="passwordConfirmControl.errors!['pattern']">Blablabla</div>
           </div>
         </div>
         <button type="submit">Confirmar</button>

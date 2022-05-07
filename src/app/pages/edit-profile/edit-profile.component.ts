@@ -14,8 +14,14 @@ export class EditProfileComponent implements OnInit {
 
   }
 
-  get f(){
-    return this.form.controls;
+  get usernameControl() {
+    return this.form.get('username') as FormControl;
+  }
+  get passwordControl() {
+    return this.form.get('password') as FormControl;
+  }
+  get passwordConfirmControl() {
+    return this.form.get('passwordConfirm') as FormControl;
   }
 
   constructor(private fb: FormBuilder) { }
