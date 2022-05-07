@@ -1,11 +1,11 @@
 <app-header></app-header>
 <app-navbar></app-navbar>
-<article *ngIf="article" class="longArticle">
+<article *ngFor="let article of article" class="longArticle">
   <img id="favouriteStar" (click)="changeFavouriteState()" [src]="getFavouriteState()?'assets/images/Estrella favoritos.svg':'assets/images/Estrella favoritos desactivada.svg'">
-  <h1>{{article.title}}</h1>
-  <img id="imgLongArticle" [src]="article.imageURL"
-       [alt]="article.altText">
-  <p>{{article.content}}</p>
+  <h1>{{article?.title}}</h1>
+  <img id="imgLongArticle" [src]="article?.imageURL"
+       [alt]="article?.altText">
+  <p>{{article?.content}}</p>
 </article>
 <h1 *ngIf="!article">Error 404: Lo sentimos, no hemos encontrado el artículo que estabas buscando.
 ¿Por qué no echas un vistazo al resto del sitio?</h1>

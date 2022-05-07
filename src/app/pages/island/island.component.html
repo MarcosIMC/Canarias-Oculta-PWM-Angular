@@ -15,7 +15,7 @@
 
   <div class="container">
     <div id="sections" class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3">
-      <app-img-section [article]="article" *ngFor="let article of articles"></app-img-section>
+      <app-img-section [island] = "island" [article]="article" *ngFor="let article of articles"></app-img-section>
     </div>
   </div>
 </main>

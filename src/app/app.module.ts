@@ -18,6 +18,11 @@ import { VerticalNavBarComponent } from './components/vertical-nav-bar/vertical-
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { SearchMobileComponent } from './components/search-mobile/search-mobile.component';
 import { ArticlePageComponent } from './pages/article-page/article-page.component';
+import {environment} from "../environments/environment";
+import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
+import {AngularFireModule} from "@angular/fire/compat";
+import { ArticleListComponent } from './components/article-list/article-list.component';
+
 
 @NgModule({
   declarations: [
@@ -36,10 +41,13 @@ import { ArticlePageComponent } from './pages/article-page/article-page.componen
     VerticalNavBarComponent,
     SearchPageComponent,
     SearchMobileComponent,
-    ArticlePageComponent
+    ArticlePageComponent,
+    ArticleListComponent
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     RouterModule.forRoot([
       {path:'',component:HomeComponent},
       {path:'home',component:HomeComponent},

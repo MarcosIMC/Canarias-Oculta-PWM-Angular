@@ -1,4 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Article} from "../../class/article";
+import {ArticleService} from "../../services/article.service";
+import {map} from "rxjs";
 
 @Component({
   selector: 'app-article',
@@ -6,10 +9,15 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./article.component.css']
 })
 export class ArticleComponent implements OnInit {
-  @Input() article:any;
-  constructor() {}
+
+  @Input() island:any;
+  @Input() article!:Article;
+
+  constructor(private  articleService : ArticleService) { }
 
   ngOnInit(): void {
   }
+
+
 
 }

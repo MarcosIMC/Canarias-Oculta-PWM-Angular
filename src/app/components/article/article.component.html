@@ -1,11 +1,11 @@
-<article class="card" [routerLink]="['/articles',article.title]">
-  <div id="starCount">
-    <img [src]="'assets/images/Estrella favoritos.svg'">
-    <span>{{article.favouriteCount|number}}</span>
-  </div>
-  <img [src]="article.imageURL" [alt]="article.altText" class="card-img-top">
-  <div class="card-body">
-    <h2 class="card-title">{{article.title}}</h2>
-    <p class="card-text">{{article.content.slice(0, 300) + "..."}}</p>
-  </div>
-</article>
+  <article class="card" [routerLink]="['/articles',article.title]">
+    <div id="starCount">
+      <img [src]="'assets/images/Estrella favoritos.svg'">
+      <!--<span>{{article.favouriteCount|number}}</span>-->
+    </div>
+    <img [src]="article.imageURL" alt="{{article.altText}}" class="card-img-top">
+    <div class="card-body">
+      <h2 class="card-title">{{article.title}}</h2>
+      <p class="card-text">{{article.content | slice:0:300}}</p>
+    </div>
+  </article>
