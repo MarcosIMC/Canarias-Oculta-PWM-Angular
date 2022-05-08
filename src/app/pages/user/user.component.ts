@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {JsonService} from "../../services/json.service";
+import { AuthService } from "../../services/auth.service";
+import {SignInComponent} from "../../components/sign-in/sign-in.component";
+import {User} from "../../class/user";
 
 @Component({
   selector: 'app-user',
@@ -9,12 +12,25 @@ import {JsonService} from "../../services/json.service";
 })
 export class UserComponent implements OnInit {
   private jsonService: JsonService;
-
-  constructor(jsonService:JsonService) {
+  logged?:boolean
+  user?:any;
+  userData?:any;
+  constructor(jsonService:JsonService, public authService: AuthService) {
     this.jsonService = jsonService;
   }
 
   ngOnInit(): void {
+
+    this.logged = this.authService.isLoggedIn;
+    if (this.authService.isLoggedIn){
+        this.user = JSON.parse(localStorage.getItem('user')!);
+        this.GetUser();
+    }
+  }
+
+  async GetUser(){
+    alert(this.user.uid);
+    this.userData = await this.authService.GetUserData(this.user.uid);
   }
 
   getMyArticles() {
