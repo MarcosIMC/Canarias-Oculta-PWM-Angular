@@ -1,8 +1,8 @@
 <div class="row">
   <div class="col-12">
-    <div class="userDataProfile">
-      <img src="" class="profilePicture profilePictureSmall" alt="photo">
-      <h1>Username</h1>
+    <div class="userDataProfile" *ngFor="let user of user">
+      <img [src]="" class="profilePicture profilePictureSmall" [alt]="">
+      <h1>{{user.displayName}}</h1>
     </div>
     <button class="btn-edit-profile"  [routerLink]="'/editProfile'">Editar tu perfil</button>
   </div>

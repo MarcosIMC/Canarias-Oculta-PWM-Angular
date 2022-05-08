@@ -25,8 +25,12 @@ import { UserComponent } from './pages/user/user.component';
 import { UserCardComponent } from './pages/user/user-card/user-card.component';
 import { EditProfileComponent } from './pages/edit-profile/edit-profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import {AuthService} from "./services/auth.service";
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { AuthGuard } from "./shared/guard/auth.guard";
 
 @NgModule({
   declarations: [
@@ -48,7 +52,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ArticleListComponent,
     UserComponent,
     UserCardComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    SignInComponent,
+    SignUpComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent
   ],
   imports: [
     BrowserModule,
@@ -59,15 +67,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
       {path: 'home', component: HomeComponent},
       {path: 'island', component: IslandComponent},
       {path: 'searchPage', component: SearchPageComponent},
-      {path: 'profile', component: UserComponent},
-      {path: 'editProfile', component: EditProfileComponent},
+      {path: 'profile', component: UserComponent, canActivate: [AuthGuard]},
+      {path: 'editProfile', component: EditProfileComponent, canActivate: [AuthGuard]},
       {path: 'articles/:articleName', component: ArticlePageComponent},
       {path: 'island/:islandName', component: IslandComponent},
-      {path: '**', pathMatch: 'full', component: HomeComponent}
+      {path: 'forgot-password', component: ForgotPasswordComponent},
+      {path: 'sign-in', component: SignInComponent},
+      {path: 'register-user', component: SignUpComponent},
+      {path: '**', pathMatch: 'full', component: HomeComponent},
     ], {onSameUrlNavigation: 'reload'}),
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
