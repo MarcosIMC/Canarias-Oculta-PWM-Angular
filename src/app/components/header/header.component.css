@@ -1,4 +1,5 @@
 #imgHeader {
+  width: -webkit-fill-available;
   width: -moz-available;
   height: 10vh;
   object-fit: cover;
