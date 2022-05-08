@@ -23,7 +23,7 @@ export class UserComponent implements OnInit {
 
     this.logged = this.authService.isLoggedIn;
     if (this.authService.isLoggedIn){
-        this.user = JSON.parse(localStorage.getItem('user')!);
+        this.user = this.authService.GetUser();
         this.GetUser();
     }
   }

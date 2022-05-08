@@ -23,6 +23,10 @@ export class AuthService {
     });
   }
 
+  GetUser() {
+    return this.fAuth.currentUser;
+  }
+
   //SignIn email and password
   SignIn(email: string, password: string){
     return this.fAuth.signInWithEmailAndPassword(email, password).then((result) => {
@@ -30,7 +34,8 @@ export class AuthService {
         this.router.navigate(['profile']);
       });
       //this.SetUserData(result.user, name);
-      this.user = this.GetUserData(result.user);
+      //this.user = this.GetUserData(result.user);
+      this.user = this.fAuth.currentUser;
       if(this.user){
         localStorage.setItem('user', JSON.stringify(this.user));
         JSON.parse(localStorage.getItem('user')!);
@@ -74,8 +79,8 @@ export class AuthService {
 
   //Return true when the user is logged
   get isLoggedIn(): boolean {
-    const user = JSON.parse(localStorage.getItem('user') !);
-    return user !== null && user.emailVerified !== false ? true : false;
+    let user = (<User>this.fAuth.currentUser);
+    return user !== null && user.emailVerified !== false;
   }
 
   SetUserData(user : any, name : string) {
@@ -95,11 +100,7 @@ export class AuthService {
 
   //Get user data
   GetUserData(user : any) {
-    return new Promise<any>((resolve) => {
-      this.db.collection("users", ref =>
-        ref.where('uid', '==', user.uid))
-        .valueChanges().subscribe(users => resolve(users))
-    })
+    return (<User>this.fAuth.currentUser);
   }
 
   //Sign Out
